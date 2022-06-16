@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
 		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
@@ -15,5 +16,63 @@
 		crossorigin="anonymous"></script>
     <title>ELO Rankings</title>
   </head>
+  <body>
+	<section class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="logo-menu">
+					<img class="logo-menu" src="img/GWL-icon.png" alt="logo">
+				</div>
+				<div class="col-md-auto">
+					<h1 class="logo-name">GWL ELO Rankings</h1>
+				</div>
+				<div class="top-header-icons col-md-auto">
+					<div class="top-header-icons-gwl col-sm-auto">
+						<a href="http://www.gopherwatchleague.com/Season5_5/Home">
+                        <img src="img/GWL-circle.png" alt="">
+					</div>
+					<div class="top-header-icons-github col-sm-auto">
+						<a href="https://github.com/rmflemming/GWL-elo-preds">
+                        <img src="img/GitHub-Mark-32px.png" alt="">
+					</div>
+					<div class="top-header-icons-discord col-sm-auto">
+					<a href="https://discord.gg/HtnPqNdsQ4">
+                        <img src="img/Discord-Logo-White.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="menu">
+		<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+            <div>
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">NEWS</a></li>
+					<li class="nav-item"><a class="nav-link active-link" href="#">TEAMS</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">PREDICTIONS</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	<section class="top-teams">	
+	</section>
+	<section class="elo-rankings">
+		<div class="gwl-teams">
+			<table class="teams-table">
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Team</th>
+						<th>Elo</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</section>
+  </body>
+  
+  
   
 </html>

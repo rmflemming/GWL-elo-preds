@@ -1,0 +1,57 @@
+.top-header {
+	margin-left:auto;
+    margin-right:auto;
+	background: #405275;
+	height: 150px;
+	justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+	justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.gwl-header {
+	height: 100px;
+	width: 100px;
+}
+
+.logo-name {
+    line-height: 85px;
+    font-family: "Bitstream Vera Serif", serif !important;
+    font-size: 44px;
+    color: #fff;
+}
+
+.logo-menu {
+    max-height: 90px;
+    max-width: 125px;
+}
+
+.top-header-icons {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+	min-height: 32px;
+    min-width: 32px;
+}
+
+.nav-item {
+	font-size: 25px;
+	font-family: "Bitstream Vera Serif", serif !important;
+	color: #405275;
+}
+
+.top-team {
+	margin-top: 20px;
+}
+
+.teams-table {
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 50px 0;
+}
