@@ -14,7 +14,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
 		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
 		crossorigin="anonymous"></script>
-    <title>ELO Rankings</title>
+	<script src="data.json"></script>
+	<script src="script.js"></script>
+	<title>ELO Rankings</title>
   </head>
   <body>
 	<section class="top-header">
@@ -60,7 +62,7 @@
 	</section>
 	<section class="elo-rankings">
 		<div class="gwl-teams">
-			<table class="teams-table">
+			<table id="teams-table" onload="loadRankings(data)">
 				<thead>
 					<tr>
 						<th>Rank</th>

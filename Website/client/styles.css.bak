@@ -53,5 +53,4 @@
 .teams-table {
 	margin-left: auto;
 	margin-right: auto;
-	border-spacing: 50px 0;
 }
