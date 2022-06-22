@@ -53,4 +53,10 @@
 #teams-table {
 	margin-left: auto;
 	margin-right: auto;
+	width: 45%;
+	text-align: center; 
+}
+
+.table th {
+   text-align: center; 
 }
