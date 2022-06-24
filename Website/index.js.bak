@@ -27,6 +27,8 @@ app.use(session({
 
 // middle ware to serve static files
 app.use('/css', express.static(__dirname + '/client/css'));
+app.use('/img', express.static(__dirname + '/client/img'));
+app.use('/img', express.static(__dirname + '/client/script'));
 app.use('/client', express.static(__dirname + '/client'));
 
 // server listens on port set to value above for incoming connections

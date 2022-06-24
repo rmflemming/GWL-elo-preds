@@ -1,23 +1,20 @@
 .top-header {
-	margin-left:auto;
-    margin-right:auto;
 	background: #405275;
 	height: 150px;
-	justify-content: center;
-    display: flex;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
 }
 
-.container {
-	justify-content: center;
-    display: flex;
-    align-items: center;
+.box {
+	width: 33%;
+	margin: auto;
+	text-align: center;
 }
 
-
-.gwl-header {
-	height: 100px;
-	width: 100px;
+.logo {
+	float: right;
+    max-height: 90px;
+    max-width: 125px;
 }
 
 .logo-name {
@@ -27,15 +24,9 @@
     color: #fff;
 }
 
-.logo-menu {
-    max-height: 90px;
-    max-width: 125px;
-}
-
 .top-header-icons {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+	display: flex;
+	float: left;
 	min-height: 32px;
     min-width: 32px;
 }
@@ -49,14 +40,71 @@
 .top-team {
 	margin-top: 20px;
 }
+#top-teams {
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
+	text-align: center;
+}
 
+.top-icon {
+	width: 200px;
+	height: 200px;
+}
+
+.top-elo-icon {
+	width: 45px;
+	height: 45px;
+}
+
+.top-team-rank {
+	font-weight: 500;
+}
+.top-team-name {
+	font-weight: 500;
+}
+#top-team-header {
+	font-size: 40px;
+	font-weight: 350;
+	text-align: left; 
+}
 #teams-table {
 	margin-left: auto;
 	margin-right: auto;
-	width: 45%;
-	text-align: center; 
+	width: 55%;
 }
 
-.table th {
-   text-align: center; 
+#teams-table th, td {
+	text-align: left;
+}
+
+#top-teams td {
+	text-align: center;
+}
+.table-elo-icon {
+	width: 32px;
+	height: 32px;
+}
+
+.table-team-icon {
+	width: 32px;
+	height: 32px;
+}
+
+.trendDown {
+	font-size: 14px;
+	color: red;
+}
+
+.trendUp {
+	font-size: 14px;
+	color: green;
+}
+
+.bi-caret-up-fill {
+	font-size: 18px;
+}
+
+.bi-caret-down-fill {
+	font-size: 18px;
 }
