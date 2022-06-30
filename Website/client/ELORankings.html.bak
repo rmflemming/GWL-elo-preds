@@ -18,7 +18,7 @@
 	<script src="/script/script.js"></script>
 	<title>ELO Rankings</title>
   </head>
-  <body>
+  <body class="gwl-site">
 	<section class="top-header">
 		<div class="box">
 			<img class="logo" src="/img/GWL-icon.png" alt="logo"> 
@@ -44,7 +44,7 @@
 		</div>
 	</section>
 	<section class="menu">
-		<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+		<nav class="navbar navbar-expand-sm bg-white justify-content-center">
             <div>
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
@@ -58,16 +58,16 @@
 	</section>
 	<section class="top-teams">
 		<div class="gwl-top-teams">
-			<table class="table-borderless" id="top-teams">
-				<thead>
-					<th colspan="2" id='top-team-header'>TOP GWL TEAMS</th>
-				</thead>
-			</table>
+			<div class="headerContainer">
+				<h1 id='top-team-header'>TOP GWL TEAMS</h1>
+			</div>
+			<div class="break"></div>
 		</div>
 	</section>
 	<section class="elo-rankings">
 		<div class="gwl-teams">
-			<table class="table table-sm" id="teams-table">
+			<h2 id="gwlWeek"></h2>
+			<table id="teams-table">
 				<thead>
 					<tr>
 						<th>Rank</th>

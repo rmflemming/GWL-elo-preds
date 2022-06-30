@@ -1,8 +1,15 @@
+// makes it easier to convert the team name to the team's image file
 function getIcon(team, size) {
-			str = "<img class=" + size +  " src='/img/" + team.replace(/-|\s/g,'') + ".png'></img>";
-			return str;
+	str = "<img class=" + size +  " src='/img/" + team.replace(/-|\s/g,'') + ".png'></img>";
+	return str;
 }
-		
+
+function getBackground(team) {
+	str = "<img class='top-icon-bg' src='/img/" + team.replace(/-|\s/g,'') + "BG.png'></img>";
+	return str;
+}
+
+// we can use the appropriate picture based on the team elo		
 function getRankIcon(elo, size) {
 	var pic;
 	if (elo >= 4000) {
@@ -25,6 +32,8 @@ function getRankIcon(elo, size) {
 	return str;
 }
 
+// we use this to calculate the changes from last week to this week
+// based on the change, we have an up arrow or down arrow on the site
 function getTrend(hist) {
 	var change = hist.at(-2) - hist.at(-1);
 	var icon = '';
@@ -36,6 +45,24 @@ function getTrend(hist) {
 	}
 	return icon;
 }	
+
+function colorRows() {
+	var table = document.getElementById("teams-table");
+	for (i = 0; i < table.rows.length; i++) {
+		if (i == 0) {
+			table.rows[i].style.setProperty("background-color", "#800000", "important");
+			table.rows[i].style.color = "#FFD700";
+		}
+		else {
+			if (i % 2 == 0) {
+				table.rows[i].style.backgroundColor = "rgba(128, 0, 0, 0.2)";
+			} else {
+				table.rows[i].style.backgroundColor = "#fff";
+			}
+		}
+	}
+}
+
 window.onload = function() {
 	var xmlhttp = new XMLHttpRequest();
 	var url = "/getRankings";
@@ -46,9 +73,16 @@ window.onload = function() {
 		var mydata = JSON.parse(xmlhttp.responseText);
 		var outstring = '';
 		var i = 1;
+		// looping through each key (team name) in the json file
+		var week = 0;
 		for (let key in mydata) {
 			var teamElo = Math.round(JSON.parse(mydata[key]).currentRating);
+			// we need to parse the information inside that key's entry since it's string type
 			var hist = JSON.parse(mydata[key]).rankingHist;
+			// we create an outstring by each row
+			if (week == 0) {
+				week = hist.length;
+			}
 			outstring +=
 				"<tr><td class='teamRank'>" +
 				i +
@@ -61,25 +95,33 @@ window.onload = function() {
 				getRankIcon(teamElo, 'table-elo-icon')+
 				' ' +
 				teamElo +
-				"</td><td>" +
 				"</td></tr>";
 			i++;
 		}
+		document.getElementById("gwlWeek").innerHTML += "Week " + week;
 		document.getElementById("teams-table").innerHTML += outstring;
+		// using loop to input data into top gopherwatch league teams table
+		// we use the data from the "general" teams table
 		for (i = 1; i <= 4; i++) {
 			var refTable = document.getElementById("teams-table");
-			var topTable = document.getElementById("top-teams");
+			var topTable = document.getElementsByClassName("gwl-top-teams")[0];
 			if (i == 1) {
-				document.getElementById("top-teams").innerHTML += '<tr></tr>'.repeat(4);
+				topTable.innerHTML += "<div class='teamContainer'></div>".repeat(4);
 			}
-			var team = refTable.rows[i].cells[1].innerHTML;
-			team = team.replace(/<img[^>"']*((("[^"]*")|('[^']*'))[^"'>]*)*>/g,"");
+			var teams = document.getElementsByClassName("teamContainer");
+			var teamName = refTable.rows[i].cells[1].innerHTML;
+			// regex to get the team name by removing the img element from the html line
+			teamName = teamName.replace(/<img[^>"']*((("[^"]*")|('[^']*'))[^"'>]*)*>/g,"");
 			var topElo = refTable.rows[i].cells[2].innerHTML;
-			topTable.rows[1].innerHTML += "<td>" + getIcon(team, 'top-icon') + "</td>";
-			topTable.rows[2].innerHTML += "<td class='top-team-rank'>#" + i + " </td>";
-			topTable.rows[3].innerHTML += "<td class='top-team-name'>" + team + "<br>"  + topElo + "</td>";
-			document.getElementsByClassName("table-elo-icon")[0].className = "top-elo-icon";
+			topElo = topElo.replace(/<img[^>"']*((("[^"]*")|('[^']*'))[^"'>]*)*>/g,"");
+			// adding team info for each row
+			teams[i-1].innerHTML += 
+				"<div class='iconContainer'>" + getIcon(teamName, 'top-icon') + getBackground(teamName) + "</div>" +
+				"<div class='rankContainer'><h2 class='top-team-rank'>#" + i + "</h2></div>" + 
+				"<div class='infoContainer'><p class='top-team-name'>" + teamName + "</p><p class='top-elo'>" + 
+				getRankIcon(topElo, 'top-elo-icon') + topElo + "</p></div>";
 		}
+		colorRows();
 	}
 	}
 };
