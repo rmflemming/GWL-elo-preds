@@ -1,0 +1,198 @@
+html * {
+	font-family: 'Bebas Neue', cursive; 
+}
+
+.top-header {
+	background: #800000;
+	height: 150px;
+	display: flex;
+	flex-direction: row;
+}
+
+.box {
+	width: 33%;
+	margin: auto;
+	text-align: center;
+}
+
+.logo {
+	float: right;
+    max-height: 90px;
+    max-width: 125px;
+}
+
+.logo-name {
+    line-height: 85px;
+    font-size: 60px;
+    color: #FFD700;
+}
+
+.top-header-icons {
+	display: flex;
+	float: left;
+	min-height: 32px;
+    min-width: 32px;
+}
+
+.gwl-site {
+	background-color: #f8f9fa;
+	padding-bottom: 150px;
+}
+.nav-link {
+	font-size: 35px;
+	color: #800000;
+}
+
+ul.navbar-nav a:hover { 
+	color: #FFD700 !important; 
+}
+
+
+.gwl-top-teams {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 55%;
+	margin: 2.5% auto auto auto;
+	background-color: #fff;
+}
+.headerContainer {
+	flex-shrink: 0;
+	flex-grow: 1;
+	width: 100%;
+	height: 5%;
+}
+
+#top-team-header {
+	padding-left: 2%;
+	color: #800000;
+	font-size: 45px;
+	font-weight: 380;
+	height: 50%;
+}
+
+.teamContainer {
+	flex-shrink: 0;
+	flex-grow: 1;
+	width: 25%;
+	height: 75%;
+	text-align: center;
+}
+
+.iconContainer {
+	position: relative;
+	width: 100%;
+	height: 35%;
+}
+
+
+.top-icon {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	z-index: 1;
+}
+
+.top-icon-bg {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	opacity: 0.8;
+	z-index: 0;
+}
+
+.rankContainer {
+	height: 10%;
+	width: 100%;
+	background-color: #800000;
+}
+
+.top-team-rank {
+	color: #FFD700;
+	font-weight: 500;
+}
+
+.infoContainer {
+	text-align: center;
+	width: 100%;
+}
+
+.top-team-name {
+	color: #000;
+	margin: 5% auto auto auto;
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.top-elo {
+	font-size: 27px;
+}
+.top-elo-icon {
+	width: 45px;
+	height: 45px;
+}
+
+.gwl-teams {
+	margin: 2% auto auto auto;
+	width: 55%;
+	background-color: #fff;
+}
+
+#gwlWeek {
+	padding-left: 2%;
+	color: #800000;
+	font-size: 35px;
+	font-weight: 500;
+}
+#teams-table {
+	width: 100%;
+	font-size: 27px;
+	background-color: #fff;
+	border-collapse: collapse;
+}
+
+
+#teams-table th, td {
+	border: none;
+	text-align: left;
+	padding: 5px;
+}
+
+#teams-table tr {
+	border: none;
+	text-align: left;
+	font-weight: 550;
+}
+
+
+.table-elo-icon {
+	width: 36px;
+	height: 36px;
+}
+
+.table-team-icon {
+	width: 45px;
+	height: auto;
+}
+
+.trendDown {
+	font-size: 20px;
+	color: red;
+}
+
+.trendUp {
+	font-size: 20px;
+	color: green;
+}
+
+.bi-caret-up-fill {
+	font-size: 25px;
+}
+
+.bi-caret-down-fill {
+	font-size: 25px;
+}
+
+
